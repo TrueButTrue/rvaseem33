@@ -1,28 +1,55 @@
-.container {
-    position: relative;
-}
-
 .aboutMe {
     display: flex;
     flex-direction: row; /* Arrange items horizontally */
     align-items: flex-start; /* Align items at the start */
 }
+/*
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    overflow-y: auto; /* Added overflow-y: auto; 
+}
+*/
 
-.gradPic {
-    width: auto;
-    height: 800px;
-    margin-right: 20px;
-    border: 3px solid white;
-    margin-top: 45px;
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    overflow-y: auto; /* Added overflow-y: auto; */
+    max-height: 80vh; /* Added max-height to limit the container height */
 }
 
+
+.aboutMeContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+  
+.gradPic {
+    width: 400px;
+    height: auto;
+    max-width: 500px;
+    border: 3px solid white;
+    margin-right: 90px;
+}
+  
 body{
     margin:0
 }
 
 .navbar{
-    width: 85%;
-    margin: auto;
+    width: 100%;
+    margin: 20px 0;
     padding: 35px 0;
     display: flex;
     align-items: center;
@@ -56,30 +83,33 @@ body{
     width: 100%;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-
-}
-
 .smth {
-    display: flex;
-    flex-direction: row; /* Arrange .box elements horizontally */
-    margin-top: 20px; /* Add space between text content and .smth */
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px; /* Added grid-gap */
+    justify-content: center;
+  }
 
-.text-content{
-    width: 110%;
-    position:absolute;
-    top: 9%;
+  
+.text-content {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    top: 5%; /* Adjusted the top percentage to move the text slightly upwards */
     transform: translateY(-40%);
     color: white;
+}
+
+@media (min-width: 768px) {
+    .text-content {
+        top: 10%; /* Adjust the top percentage for larger screens */
+    }
 }
 .text-content h1{
     text-align: center;
     font-size: 60px;
-    margin-top: 80px;
+    margin-top: 5px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .text-content p{
@@ -103,14 +133,21 @@ ul.a {
     text-align: center;
 }
 
-.backgroundpage{
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.backgroundpage {
     width: 100%;
-    height:100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(all-is-calm-at-coopers-pond-penny-polakoff.jpg);
+    min-height: 100vh; /* Set a minimum height to cover the entire viewport */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(all-is-calm-at-coopers-pond-penny-polakoff.jpg);
     background-size: cover;
     background-position: center;
-    justify-content: space-evenly;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 ul.b {
     list-style-position: outside;
@@ -120,76 +157,74 @@ ul.b {
     line-height: 27px;
 
 }
-.aboutMeContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
 
 .box {
     width: 350px; /* Adjust width based on your layout */
     height: 300px; /* Adjust height based on your layout */
-    background: #E1DADA;
-    margin: 10px; /* Add space between .box elements */
-    border: 3px solid white;
-    border-radius: 1;
-    position: absolute;
-    top:35%;
-    left: 52%;
+
 } 
 
 
 .boxv2 {
     width: 350px; /* Adjust width based on your layout */
     height: 725px; /* Adjust height based on your layout */
-    background: #E1DADA;
-    margin: 10px; /* Add space between .box elements */
-    border: 3px solid white;
-    border-radius: 1;
-    position: absolute;
-    top:35%;
-    left: 35%;
 
 }
 
 .boxv3 {
-    width: calc(33.33% - 20px); /* Adjust width based on your layout */
+    width: 350px; /* Adjust width based on your layout */
     height: 400px; /* Adjust height based on your layout */
-    background: #E1DADA;
-    margin: 10px; /* Add space between .box elements */
-    border: 3px solid white;
-    border-radius: 1;
-    position: absolute;
-    top:63%;
-    left: 52%;
 
 }
 
 .boxv4 {
     width: 320px; /* Adjust width based on your layout */
     height: 300px; /* Adjust height based on your layout */
-    background: #E1DADA;
-    margin: 10px; /* Add space between .box elements */
-    border: 3px solid white;
-    border-radius: 1;
-    position: absolute;
-    top:35%;
-    left: 80%;
 
 }
 
 
 .boxv5{
-    width: 200px; /* Adjust width based on your layout */
+    width: 300px; /* Adjust width based on your layout */
     height: 300px; /* Adjust height based on your layout */
-    background: #E1DADA;
-    margin: 10px; /* Add space between .box elements */
-    border: 3px solid white;
-    border-radius: 1;
-    position: absolute;
-    top:35%;
-    left: 69%;
 }
 
+.box,
+.boxv2,
+.boxv3,
+.boxv4,
+.boxv5 {
 
+  max-width: 320px; /* Adjusted max-width for consistency */
+  background: #E1DADA;
+  margin: 10px;
+  border: 3px solid white;
+}
+
+.boxv2,
+.boxv3,
+.boxv4,
+.boxv5 {
+  max-width: 100%; /* Adjusted max-width to take full width */
+}
+
+@media (min-width: 768px) {
+    .smth {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        max-height: none;
+    }
+
+  .aboutMeContainer {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .gradPic {
+    max-width: 100%; /* Adjusted max-width for responsiveness */
+  }
+
+  .text-content {
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+  }
+}
